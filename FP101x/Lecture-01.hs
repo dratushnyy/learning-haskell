@@ -7,10 +7,16 @@
   xss -> list of list of "x"
  * spaces are significant in definitions
  -}
+double :: Int -> Int
 double x = x + x
+
+quadruple :: Int -> Int
 quadruple x = double (double x)
 
+factorial :: Integer -> Integer
 factorial n = product [1..n]
+
+average :: [Int] -> Int
 -- `` <- makes a function infix
 average ns = sum ns `div` length ns
 
