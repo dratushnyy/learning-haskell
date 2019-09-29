@@ -19,3 +19,5 @@ l = [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
 
 length' xs = sum [1| _ <-xs]
 t = length' (listOfInts 1 100)
+
+triangles = [(a,b,c) | c <- [1..10], b <-[1..c], a <- [1..b], a^2 + b^2 == c^2]
