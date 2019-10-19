@@ -7,16 +7,11 @@ firsts ps = [x | (x, _) <- ps]
 
 factors :: Int -> [Int]
 factors n = [x | x <- [1..n], n `mod` x == 0]
--
 -- naive prime
 prime :: Int -> Bool
-{-
- note that "False" will be returned as soon as  any factor other than
- 1 or n will be produced
--}
 prime n = factors n == [1, n]
 
-find :: Eq a => a -> [(a, b)] -> [b]
+find :: Eq k => k -> [(k, v)] -> [v]
 find k t = [v | (k', v) <- t, k == k']
 
 pairs :: [a] -> [(a, a)]
@@ -29,3 +24,4 @@ positions :: Eq a => a -> [a] -> [Int]
 -- note that [1..] is generates infinite list
 -- but it will stop once "zip" exhausts "xs"
 positions x xs = [i | (x',i) <- zip xs [0..], x == x']
+
